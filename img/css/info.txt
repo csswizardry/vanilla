@@ -1,0 +1,1 @@
+Place any images in here that are referenced only in stylesheets. All other image content belongs in /img/.
