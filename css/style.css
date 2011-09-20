@@ -7,6 +7,8 @@ RESET
 SHARED
 CLEARFIX
 MAIN
+TYPE
+ACCESSIBILITY
 */
 
 
@@ -77,14 +79,14 @@ abbr,acronym{
 \*------------------------------------*/
 .cf:before,
 .cf:after{
-    content:"";
-    display:table;
+	content:"";
+	display:table;
 }
 .cf:after{
-    clear:both;
+	clear:both;
 }
 .cf{
-    zoom:1;
+	zoom:1;
 }
 
 
@@ -97,3 +99,50 @@ abbr,acronym{
 html{
 	overflow-y:scroll;
 }
+
+
+
+
+
+/*------------------------------------*\
+	$TYPE
+\*------------------------------------*/
+/*--- LISTS ---*/
+li > ul,
+li > ol{
+	margin-bottom:0;
+}
+
+/*--- QUOTES ---*/
+q{ quotes:'‘' '’' '“' '”'; }
+
+q:before{ content:'‘'; content:open-quote; }
+q:after{ content:'’'; content:close-quote; }
+
+q q:before{ content: '“'; content: open-quote; }
+q q:after{ content: '”'; content: close-quote; }
+
+blockquote{ quotes: '“' '”'; }
+blockquote p:before{ content: '“'; content: open-quote; }
+blockquote p:after{ content: ''; content: no-close-quote; }
+blockquote p:last-of-type:after{ content: '”'; content: close-quote; }
+
+blockquote{
+	text-indent:-0.4em;
+}
+.source{
+	display:block;
+	text-indent:0;
+}
+.source:before{
+	content:"—";
+}
+
+
+
+
+
+/*------------------------------------*\
+	$MISC
+\*------------------------------------*/
+.accessibility{ position:absolute; left:-9999px; }
