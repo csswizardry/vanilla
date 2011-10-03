@@ -8,6 +8,7 @@ SHARED
 CLEARFIX
 MAIN
 TYPE
+FORMS
 MISC
 */
 
@@ -69,6 +70,35 @@ abbr,acronym{
 /*------------------------------------*\
 	$SHARED
 \*------------------------------------*/
+/* Common margin-bottom for vertical rhythm. */
+h1,h2,h3,h4,h5,h6,
+ul,ol,dl,
+p,
+table,
+form,
+pre,
+hr{
+	margin-bottom:Xpx;
+	margin-bottom:Xrem;
+}
+
+/* Default indentation value for lists etc. */
+ul,ul,dl{
+	margin-left:Xem;
+}
+
+label,
+.text-input,
+textarea,
+.btn{
+	cursor:pointer;
+}
+.text-input:active,
+.text-input:focus,
+textarea:active,
+textarea:focus{
+	cursor:text;
+}
 
 
 
@@ -77,6 +107,9 @@ abbr,acronym{
 /*------------------------------------*\
 	$CLEARFIX
 \*------------------------------------*/
+/*
+Big up @necolas: http://nicolasgallagher.com/micro-clearfix-hack/
+*/
 .cf:before,
 .cf:after{
 	content:"";
@@ -107,6 +140,40 @@ html{
 /*------------------------------------*\
 	$TYPE
 \*------------------------------------*/
+/*--- HEADINGS ---*/
+h1,.alpha{
+	font-size:Xpx;
+	font-size:Xrem;
+}
+h2,.beta{
+	font-size:Xpx;
+	font-size:Xrem;
+}
+h3,.gamma{
+	font-size:Xpx;
+	font-size:Xrem;
+}
+h4,.delta{
+	font-size:Xpx;
+	font-size:Xrem;
+}
+h5,.epsilon{
+	font-size:Xpx;
+	font-size:Xrem;
+}
+h6,.zeta{
+	font-size:Xpx;
+	font-size:Xrem;
+}
+
+/*--- LINKS ---*/
+a{
+	text-decoration:none;
+}
+a:hover{
+	text-decoration:underline;
+}
+
 /*--- LISTS ---*/
 li > ul,
 li > ol{
@@ -114,6 +181,9 @@ li > ol{
 }
 
 /*--- QUOTES ---*/
+/*
+Big up @boblet: http://html5doctor.com/blockquote-q-cite/
+*/
 q{ quotes:"‘" "’" "“" "”"; }
 
 q:before{ content:"‘"; content:open-quote; }
@@ -143,6 +213,18 @@ blockquote{
 
 
 /*------------------------------------*\
+	$FORMS
+\*------------------------------------*/
+input,
+textarea{
+	font:inherit;
+}
+
+
+
+
+
+/*------------------------------------*\
 	$MISC
 \*------------------------------------*/
-.accessibility{ position:absolute; left:-9999px; }
+.accessibility{ position:absolute; left:-99999px; }
