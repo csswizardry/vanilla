@@ -38,7 +38,7 @@ time,mark,audio,video{
 }
 article,aside,details,figcaption,figure,footer,
 header,hgroup,menu,nav,section{
-	display: block;
+	display:block;
 }
 table{
 	border-collapse:collapse;
@@ -57,9 +57,6 @@ caption,th{
 h1,h2,h3,h4,h5,h6{
 	font-size:100%;
 	font-weight:normal;
-}
-q:before,q:after{
-	content:"";
 }
 abbr,acronym{
 	border:0;
