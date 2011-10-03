@@ -47,9 +47,12 @@ table{
 fieldset,img{
 	border:0;
 }
-address,caption,cite,dfn,th,var{
+address,caption,dfn,th,var{
 	font-style:normal;
 	font-weight:normal;
+}
+u{
+	text-decoration:none;
 }
 caption,th{
 	text-align:left;
@@ -58,7 +61,7 @@ h1,h2,h3,h4,h5,h6{
 	font-size:100%;
 	font-weight:normal;
 }
-abbr,acronym{
+abbr{
 	border:0;
 }
 
@@ -97,6 +100,16 @@ textarea,
 textarea:active,
 textarea:focus{
 	cursor:text;
+}
+
+em,i,cite{
+	font-style:italic;
+	font-weight:inherit;
+}
+
+strong,b{
+	font-weight:bold;
+	font-style:inherit;
 }
 
 
