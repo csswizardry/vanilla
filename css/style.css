@@ -131,6 +131,7 @@ Big up @necolas: http://nicolasgallagher.com/micro-clearfix-hack/
 \*------------------------------------*/
 html{
 	overflow-y:scroll;
+	line-height:1.5; /* A safe and comfortable default for body copy at any size. */
 }
 
 
@@ -144,26 +145,32 @@ html{
 h1,.alpha{
 	font-size:Xpx;
 	font-size:Xrem;
+	line-height:;
 }
 h2,.beta{
 	font-size:Xpx;
 	font-size:Xrem;
+	line-height:;
 }
 h3,.gamma{
 	font-size:Xpx;
 	font-size:Xrem;
+	line-height:;
 }
 h4,.delta{
 	font-size:Xpx;
 	font-size:Xrem;
+	line-height:;
 }
 h5,.epsilon{
 	font-size:Xpx;
 	font-size:Xrem;
+	line-height:;
 }
 h6,.zeta{
 	font-size:Xpx;
 	font-size:Xrem;
+	line-height:;
 }
 
 /*--- LINKS ---*/
