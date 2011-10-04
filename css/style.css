@@ -82,7 +82,7 @@ hr{
 }
 
 /* Default indentation value for lists etc. */
-ul,ul,dd{
+ul,ol,dd{
 	margin-left:Xem;
 }
 
