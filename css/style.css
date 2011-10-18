@@ -53,7 +53,7 @@ strong,b,mark{
 	font-weight:bold;
 	font-style:inherit;
 }
-em,i,cite,q,address,var{
+em,i,cite,q,address,dfn,var{
 	font-style:italic;
 	font-weight:inherit;
 }
@@ -70,7 +70,7 @@ a,u,ins{
 del,s{
 	text-decoration:line-through;
 }
-code,samp,kbd{
+pre,code,samp,kbd{
 	font-family:monospace;
 }
 small{
