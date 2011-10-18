@@ -76,7 +76,8 @@ p,
 table,
 form,
 pre,
-hr{
+hr,
+.source{
 	margin-bottom:Xpx;
 	margin-bottom:Xrem;
 }
@@ -104,7 +105,7 @@ em,i,cite{
 	font-weight:inherit;
 }
 
-strong,b{
+strong,b,mark{
 	font-weight:bold;
 	font-style:inherit;
 }
@@ -219,6 +220,8 @@ blockquote{
 .source{
 	display:block;
 	text-indent:0;
+	margin-top:-Xpx;
+	margin-top:-Xrem;
 }
 .source:before{
 	content:"—";
@@ -234,6 +237,7 @@ blockquote{
 img{
 	max-width:100%;
 	height:auto;
+	font-style:italic;
 }
 
 
