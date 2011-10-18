@@ -21,12 +21,15 @@ MISC
 /*------------------------------------*\
 	$RESET
 \*------------------------------------*/
+/*
+A more considered reset; more of a restart...
+*/
 html,body,div,span,applet,object,iframe,
 h1,h2,h3,h4,h5,h6,p,blockquote,pre,hr,
-a,abbr,acronym,address,big,cite,code,
+a,abbr,address,cite,code,
 del,dfn,em,img,ins,kbd,q,s,samp,
-small,strike,strong,sub,sup,tt,var,
-b,u,i,center,
+small,strong,sub,sup,tt,var,
+b,u,i,
 dl,dt,dd,ol,ul,li,
 fieldset,form,label,legend,
 table,caption,tbody,tfoot,thead,tr,th,td,
@@ -40,26 +43,43 @@ article,aside,details,figcaption,figure,footer,
 header,hgroup,menu,nav,section{
 	display:block;
 }
+h1,h2,h3,h4,h5,h6{
+	font-size:100%;
+}
 table{
 	border-collapse:collapse;
 	border-spacing:0;
 }
-fieldset,img,abbr{
-	border:0;
+strong,b,mark{
+	font-weight:bold;
+	font-style:inherit;
 }
-address,caption,dfn,th,var{
-	font-style:normal;
-	font-weight:normal;
+em,i,cite,q,address,var{
+	font-style:italic;
+	font-weight:inherit;
 }
-u{
+abbr[title],dfn[title]{
+	cursor:help;
+	border-bottom:1px dotted;
+}
+ins{
+	border-bottom:1px solid;
+}
+a,u,ins{
 	text-decoration:none;
 }
-caption,th{
-	text-align:left;
+del,s{
+	text-decoration:line-through;
 }
-h1,h2,h3,h4,h5,h6{
-	font-size:100%;
-	font-weight:normal;
+code,samp,kbd{
+	font-family:monospace;
+}
+small{
+	font-size:0.75em;
+}
+img{
+	border:none;
+	font-style:italic;
 }
 
 
@@ -225,6 +245,15 @@ blockquote{
 }
 .source:before{
 	content:"—";
+}
+
+/*--- MISC ---*/
+mark{
+	border-bottom:2px solid;
+}
+abbr{
+	cursor:help;
+	border-bottom:1px dotted;
 }
 
 
