@@ -9,7 +9,6 @@ CLEARFIX
 MAIN
 TYPE
 IMAGES
-FORMS
 TABLES
 MISC
 */
@@ -81,6 +80,10 @@ img{
 	border:none;
 	font-style:italic;
 }
+input,
+textarea{
+	font:inherit;
+}
 
 
 
@@ -118,16 +121,6 @@ textarea,
 textarea:active,
 textarea:focus{
 	cursor:text;
-}
-
-em,i,cite{
-	font-style:italic;
-	font-weight:inherit;
-}
-
-strong,b,mark{
-	font-weight:bold;
-	font-style:inherit;
 }
 
 
@@ -204,9 +197,6 @@ h6,.zeta{
 }
 
 /*--- LINKS ---*/
-a{
-	text-decoration:none;
-}
 a:hover{
 	text-decoration:underline;
 }
@@ -247,15 +237,6 @@ blockquote{
 	content:"—";
 }
 
-/*--- MISC ---*/
-mark{
-	border-bottom:2px solid;
-}
-abbr{
-	cursor:help;
-	border-bottom:1px dotted;
-}
-
 
 
 
@@ -266,19 +247,6 @@ abbr{
 img{
 	max-width:100%;
 	height:auto;
-	font-style:italic;
-}
-
-
-
-
-
-/*------------------------------------*\
-	$FORMS
-\*------------------------------------*/
-input,
-textarea{
-	font:inherit;
 }
 
 
