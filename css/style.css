@@ -81,7 +81,7 @@ img{
 	font-style:italic;
 }
 input,
-select,
+select,option,optgroup,
 textarea{
 	font:inherit;
 }
