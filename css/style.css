@@ -7,6 +7,9 @@ RESET
 SHARED
 CLEARFIX
 MAIN
+NAV
+MEDIA
+ISLAND
 TYPE
 IMAGES
 TABLES
@@ -157,6 +160,60 @@ html{
 	overflow-y:scroll;
 	line-height:1.5; /* A safe and comfortable default for body copy at any size. */
 }
+
+
+
+
+
+/*------------------------------------*\
+	$NAV
+\*------------------------------------*/
+.nav{
+	list-style:none;
+	margin-left:0;
+}
+	.nav li{
+		display:inline;
+	}
+		.nav a{
+			display:inline-block;
+		}
+
+
+
+
+
+/*------------------------------------*\
+	$MEDIA
+\*------------------------------------*/
+.media{
+	display:block;
+	overflow:hidden;
+}
+	.media .img{
+		float:left;
+		margin-right:Xem;
+	}
+		.media .img img{
+			display:block;
+		}
+	.media .body{
+		overflow:hidden;
+	}
+
+
+
+
+
+/*------------------------------------*\
+	$ISLAND
+\*------------------------------------*/
+.island{
+	padding:Xem;
+}
+	.island > :last-child{
+		margin-bottom:0;
+	}
 
 
 
