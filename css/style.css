@@ -24,7 +24,7 @@ MISC
 	$RESET
 \*------------------------------------*/
 /*
-A more considered reset; more of a restart...
+A more considered reset; more of a restart... As per: csswizardry.com/2011/10/reset-restarted
 */
 html,body,div,span,applet,object,iframe,
 h1,h2,h3,h4,h5,h6,p,blockquote,pre,hr,
@@ -135,7 +135,7 @@ textarea:focus{
 	$CLEARFIX
 \*------------------------------------*/
 /*
-Big up @necolas: http://nicolasgallagher.com/micro-clearfix-hack/
+Big up @necolas: nicolasgallagher.com/micro-clearfix-hack
 */
 .cf:before,
 .cf:after{
@@ -167,7 +167,10 @@ html{
 
 /*------------------------------------*\
 	$NAV
-\*------------------------------------*/
+\*------------------------------------*
+/*
+As per: csswizardry.com/2011/09/the-nav-abstraction
+*/
 .nav{
 	list-style:none;
 	margin-left:0;
@@ -186,6 +189,9 @@ html{
 /*------------------------------------*\
 	$MEDIA
 \*------------------------------------*/
+/*
+As per: csswizardry.com/2011/09/the-nav-abstraction
+*/
 .media{
 	display:block;
 	overflow:hidden;
@@ -208,6 +214,9 @@ html{
 /*------------------------------------*\
 	$ISLAND
 \*------------------------------------*/
+/*
+As per csswizardry.com/2011/10/the-island-object
+*/
 .island{
 	padding:Xem;
 }
@@ -267,7 +276,7 @@ li > ol{
 
 /*--- QUOTES ---*/
 /*
-Big up @boblet: http://html5doctor.com/blockquote-q-cite/
+Big up @boblet: html5doctor.com/blockquote-q-cite
 */
 q{ quotes:"‘" "’" "“" "”"; }
 
@@ -325,4 +334,12 @@ table{
 /*------------------------------------*\
 	$MISC
 \*------------------------------------*/
-.accessibility{ position:absolute; left:-99999px; }
+.accessibility				{ position:absolute; left:-99999px; }
+[dir=rtl] .accessibility	{ left:auto; right:-99999px; }
+
+/*
+Helper class to carry brand colours etc as per speakerdeck.com/u/csswizardry/p/breaking-good-habits?slide=31
+*/
+.brand{
+	color:;
+}
