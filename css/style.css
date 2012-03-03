@@ -190,7 +190,7 @@ As per: csswizardry.com/2011/09/the-nav-abstraction
 	$MEDIA
 \*------------------------------------*/
 /*
-As per: csswizardry.com/2011/09/the-nav-abstraction
+As per: stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code
 */
 .media{
 	display:block;
@@ -231,7 +231,29 @@ As per csswizardry.com/2011/10/the-island-object
 /*------------------------------------*\
 	$TYPE
 \*------------------------------------*/
-/*--- HEADINGS ---*/
+/*--- SCALE ---*/
+/*
+As per csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css
+*/
+
+/* Large */
+giga.{
+	font-size:Xpx;
+	font-size:Xrem;
+	line-height:;
+}
+mega.{
+	font-size:Xpx;
+	font-size:Xrem;
+	line-height:;
+}
+kilo.{
+	font-size:Xpx;
+	font-size:Xrem;
+	line-height:;
+}
+
+/* Headings */
 h1,.alpha{
 	font-size:Xpx;
 	font-size:Xrem;
@@ -261,6 +283,11 @@ h6,.zeta{
 	font-size:Xpx;
 	font-size:Xrem;
 	line-height:;
+}
+
+/* Small */
+small,.milli{
+	font-size:0.75em;
 }
 
 /*--- LINKS ---*/
