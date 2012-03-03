@@ -287,7 +287,9 @@ h6,.zeta{
 
 /* Small */
 small,.milli{
-	font-size:0.75em;
+	font-size:Xpx;
+	font-size:Xrem;
+	line-height:;
 }
 
 /*--- LINKS ---*/
