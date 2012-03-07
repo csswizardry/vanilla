@@ -254,6 +254,11 @@ kilo.{
 }
 
 /* Headings */
+/* Generic heading class, as per: jsfiddle.net/csswizardry/yFQDP */
+.hN{
+	
+}
+
 h1,.alpha{
 	font-size:Xpx;
 	font-size:Xrem;
