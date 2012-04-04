@@ -193,19 +193,38 @@ As per: csswizardry.com/2011/09/the-nav-abstraction
 As per: stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code
 */
 .media{
-	display:block;
-	overflow:hidden;
+    display:block;
 }
-	.media .img{
-		float:left;
-		margin-right:Xem;
-	}
-		.media .img img{
-			display:block;
-		}
-	.media .body{
-		overflow:hidden;
-	}
+    .img{
+        float:left;
+        margin-right:Xpx;
+    }
+    
+    /* Reversed image location (right instead of left). */
+    .img-rev{
+        float:right;
+        margin-left:Xpx;
+    }
+        .img img{
+            display:block;
+        }
+    .body{
+        overflow:hidden;
+    }
+        .body > :last-child{
+            margin-bottom:0;
+        }
+
+/*
+Islets have a slightly smaller padding value than normal.
+With this in mind we make the `.img` spacing a little smaller for visual consistency.
+*/
+.islet .img{
+    margin-right:Xpx;
+}
+.islet .img-rev{
+    margin-left:Xpx;
+}
 
 
 
@@ -217,12 +236,25 @@ As per: stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-l
 /*
 As per csswizardry.com/2011/10/the-island-object
 */
-.island{
-	padding:Xem;
+.island,
+.islet{
+    display:block;
+    -webkit-border-radius:Xpx;
+       -moz-border-radius:Xpx;
+            border-radius:Xpx;
 }
-	.island > :last-child{
-		margin-bottom:0;
-	}
+.island{
+    padding:Xpx;
+}
+    .island > :last-child,
+    .islet > :last-child{
+        margin-bottom:0;
+    }
+
+/* Just like `.island`, only smaller. */
+.islet{
+    padding:Xpx;
+}
 
 
 
@@ -237,17 +269,17 @@ As per csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css
 */
 
 /* Large */
-giga.{
+.giga{
 	font-size:Xpx;
 	font-size:Xrem;
 	line-height:;
 }
-mega.{
+.mega{
 	font-size:Xpx;
 	font-size:Xrem;
 	line-height:;
 }
-kilo.{
+.kilo{
 	font-size:Xpx;
 	font-size:Xrem;
 	line-height:;
@@ -255,9 +287,7 @@ kilo.{
 
 /* Headings */
 /* Generic heading class, as per: jsfiddle.net/csswizardry/yFQDP */
-.hN{
-	
-}
+.hN{}
 
 h1,.alpha{
 	font-size:Xpx;
@@ -298,8 +328,17 @@ small,.milli{
 }
 
 /*--- LINKS ---*/
-a:hover{
-	text-decoration:underline;
+a{}
+    a:hover,
+    a:focus,
+    a:active{
+        text-decoration:underline;
+    }
+
+/* Basic styling for any 'current' links. */
+.current a{
+    cursor:text;
+    text-decoration:underline;
 }
 
 /*--- LISTS ---*/
@@ -368,8 +407,8 @@ table{
 /*------------------------------------*\
 	$MISC
 \*------------------------------------*/
-.accessibility				{ position:absolute; left:-99999px; }
-[dir=rtl] .accessibility	{ left:auto; right:-99999px; }
+.accessibility              { position:absolute; left:-99999px; }
+[dir=rtl] .accessibility    { left:auto; right:-99999px; }
 
 /*
 Helper class to carry brand colours etc as per speakerdeck.com/u/csswizardry/p/breaking-good-habits?slide=31
