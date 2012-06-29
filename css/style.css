@@ -114,7 +114,7 @@ textarea:focus{
 /*------------------------------------*\
     $SHARED
 \*------------------------------------*/
-/* Common margin-bottom for vertical rhythm. */
+/* Common margin-bottom for vertical rhythm. As per csswizardry.com/2012/06/single-direction-margin-declarations */
 h1,h2,h3,h4,h5,h6,hgroup,
 ul,ol,dd,
 p,figure,
