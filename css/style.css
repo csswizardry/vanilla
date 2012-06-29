@@ -139,26 +139,25 @@ ul,ol,dd{
 /*
 Big up @necolas: nicolasgallagher.com/micro-clearfix-hack
 */
+/*
+Big up @necolas: nicolasgallagher.com/micro-clearfix-hack
+*/
 .media:before,
 .media:after,
-.island:before,
-.island:after,
-.islet:before,
-.islet:after,
+.island:before,.islet:before,
+.island:after,.islet:after,
 .cf:before,
 .cf:after{
     content:"";
     display:table;
 }
 .media:after,
-.island:after,
-.islet:after,
+.island:after,.islet:after,
 .cf:after{
     clear:both;
 }
 .media,
-.island,
-.islet,
+.island,.islet,
 .cf{
     zoom:1;
 }
