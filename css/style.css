@@ -97,14 +97,11 @@ textarea{
 	$SHARED
 \*------------------------------------*/
 /* Common margin-bottom for vertical rhythm. */
-h1,h2,h3,h4,h5,h6,
-ul,ol,dl,
-p,
-table,
-form,
-pre,
-hr,
-.source{
+h1,h2,h3,h4,h5,h6,hgroup,
+ul,ol,dd,
+p,figure,
+pre,table,fieldset,hr,
+.media,.island,.islet,.source{
 	margin-bottom:Xpx;
 	margin-bottom:Xrem;
 }
@@ -187,11 +184,11 @@ As per: csswizardry.com/2011/09/the-nav-abstraction
 	list-style:none;
 	margin-left:0;
 }
-	.nav li{
-		display:inline;
-	}
-		.nav a{
+	.nav > li,
+		.nav > li > a{
 			display:inline-block;
+			*display:inline;
+			zoom:1;
 		}
 
 
