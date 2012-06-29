@@ -297,6 +297,9 @@ As per csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css
 /* Headings */
 /* Generic heading class, as per: jsfiddle.net/csswizardry/yFQDP */
 .hN{}
+hgroup .hN{
+	margin-bottom:0;
+}
 
 h1,.alpha{
 	font-size:Xpx;
