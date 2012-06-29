@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*------------------------------------*\
-	CONTENTS
+    CONTENTS
 \*------------------------------------*/
 /*
 RESET
@@ -21,7 +21,7 @@ MISC
 
 
 /*------------------------------------*\
-	$RESET
+    $RESET
 \*------------------------------------*/
 /*
 A more considered reset; more of a restart... As per: csswizardry.com/2011/10/reset-restarted
@@ -38,93 +38,73 @@ table,caption,tbody,tfoot,thead,tr,th,td,
 article,aside,canvas,details,figcaption,figure,
 footer,header,hgroup,menu,nav,section,summary,
 time,mark,audio,video{
-	margin:0;
-	padding:0;
+    margin:0;
+    padding:0;
 }
 article,aside,details,figcaption,figure,footer,
 header,hgroup,menu,nav,section{
-	display:block;
+    display:block;
 }
 h1,h2,h3,h4,h5,h6{
-	font-size:100%;
+    font-size:100%;
 }
 table{
-	border-collapse:collapse;
-	border-spacing:0;
+    border-collapse:collapse;
+    border-spacing:0;
 }
 strong,b,mark{
-	font-weight:bold;
-	font-style:inherit;
+    font-weight:bold;
+    font-style:inherit;
 }
 em,i,cite,q,address,dfn,var{
-	font-style:italic;
-	font-weight:inherit;
+    font-style:italic;
+    font-weight:inherit;
 }
 abbr[title],dfn[title]{
-	cursor:help;
-	border-bottom:1px dotted;
+    cursor:help;
+    border-bottom:1px dotted;
 }
 ins{
-	border-bottom:1px solid;
+    border-bottom:1px solid;
 }
 a,u,ins{
-	text-decoration:none;
+    text-decoration:none;
 }
 del,s{
-	text-decoration:line-through;
+    text-decoration:line-through;
 }
 pre,code,samp,kbd{
-	font-family:monospace;
+    font-family:monospace;
 }
 small{
-	font-size:0.75em;
+    font-size:0.75em;
 }
 img{
-	border:none;
-	font-style:italic;
+    border:none;
+    font-style:italic;
 }
 input,
 select,option,optgroup,
 textarea{
-	font:inherit;
+    font:inherit;
 }
 
-
-
-
-
-/*------------------------------------*\
-	$SHARED
-\*------------------------------------*/
-/* Common margin-bottom for vertical rhythm. */
-h1,h2,h3,h4,h5,h6,
-ul,ol,dl,
-p,
-table,
-form,
-pre,
-hr,
-.source{
-	margin-bottom:Xpx;
-	margin-bottom:Xrem;
-}
-
-/* Default indentation value for lists etc. */
-ul,ol,dd{
-	margin-left:Xem;
-}
-
+/*
+Form items have always missed cursor interactions...
+*/
 label,
-.text-input,
+input,
 textarea,
-.btn{
-	cursor:pointer;
+button,
+select,
+option{
+    cursor:pointer;
 }
 .text-input:active,
 .text-input:focus,
 textarea:active,
 textarea:focus{
-	cursor:text;
+    cursor:text;
 }
 
 
@@ -132,21 +112,55 @@ textarea:focus{
 
 
 /*------------------------------------*\
-	$CLEARFIX
+    $SHARED
+\*------------------------------------*/
+/* Common margin-bottom for vertical rhythm. */
+h1,h2,h3,h4,h5,h6,hgroup,
+ul,ol,dd,
+p,figure,
+pre,table,fieldset,hr,
+.media,.island,.islet,.source{
+    margin-bottom:Xpx;
+    margin-bottom:Xrem;
+}
+
+/* Default indentation value for lists etc. */
+ul,ol,dd{
+    margin-left:Xem;
+}
+
+
+
+
+
+/*------------------------------------*\
+    $CLEARFIX
 \*------------------------------------*/
 /*
 Big up @necolas: nicolasgallagher.com/micro-clearfix-hack
 */
+.media:before,
+.media:after,
+.island:before,
+.island:after,
+.islet:before,
+.islet:after,
 .cf:before,
 .cf:after{
-	content:"";
-	display:table;
+    content:"";
+    display:table;
 }
+.media:after,
+.island:after,
+.islet:after,
 .cf:after{
-	clear:both;
+    clear:both;
 }
+.media,
+.island,
+.islet,
 .cf{
-	zoom:1;
+    zoom:1;
 }
 
 
@@ -154,11 +168,11 @@ Big up @necolas: nicolasgallagher.com/micro-clearfix-hack
 
 
 /*------------------------------------*\
-	$MAIN
+    $MAIN
 \*------------------------------------*/
 html{
-	overflow-y:scroll;
-	line-height:1.5; /* A safe and comfortable default for body copy at any size. */
+    overflow-y:scroll;
+    line-height:1.5; /* A safe and comfortable default for body copy at any size. */
 }
 
 
@@ -166,70 +180,102 @@ html{
 
 
 /*------------------------------------*\
-	$NAV
+    $NAV
 \*------------------------------------*
 /*
 As per: csswizardry.com/2011/09/the-nav-abstraction
 */
 .nav{
-	list-style:none;
-	margin-left:0;
+    list-style:none;
+    margin-left:0;
 }
-	.nav li{
-		display:inline;
-	}
-		.nav a{
-			display:inline-block;
-		}
+    .nav > li,
+        .nav > li > a{
+            display:inline-block;
+            *display:inline;
+            zoom:1;
+        }
 
 
 
 
 
 /*------------------------------------*\
-	$MEDIA
+    $MEDIA
 \*------------------------------------*/
 /*
 As per: stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code
 */
 .media{
-	display:block;
-	overflow:hidden;
+    display:block;
 }
-	.media .img{
-		float:left;
-		margin-right:Xem;
-	}
-		.media .img img{
-			display:block;
-		}
-	.media .body{
-		overflow:hidden;
-	}
+    .img{
+        float:left;
+        margin-right:Xpx;
+    }
+    
+    /* Reversed image location (right instead of left). */
+    .img-rev{
+        float:right;
+        margin-left:Xpx;
+    }
+        .img img{
+            display:block;
+        }
+    .body{
+        overflow:hidden;
+    }
+        .body > :last-child{
+            margin-bottom:0;
+        }
+
+/*
+Islets have a slightly smaller padding value than normal.
+With this in mind we make the `.img` spacing a little smaller for visual consistency.
+*/
+.islet .img{
+    margin-right:Xpx;
+}
+.islet .img-rev{
+    margin-left:Xpx;
+}
 
 
 
 
 
 /*------------------------------------*\
-	$ISLAND
+    $ISLAND
 \*------------------------------------*/
 /*
 As per csswizardry.com/2011/10/the-island-object
 */
-.island{
-	padding:Xem;
+.island,
+.islet{
+    display:block;
+    -webkit-border-radius:Xpx;
+       -moz-border-radius:Xpx;
+            border-radius:Xpx;
 }
-	.island > :last-child{
-		margin-bottom:0;
-	}
+.island{
+    padding:Xpx;
+}
+    .island > :last-child,
+    .islet > :last-child{
+        margin-bottom:0;
+    }
+
+/* Just like `.island`, only smaller. */
+.islet{
+    padding:Xpx;
+}
 
 
 
 
 
 /*------------------------------------*\
-	$TYPE
+    $TYPE
 \*------------------------------------*/
 /*--- SCALE ---*/
 /*
@@ -237,75 +283,85 @@ As per csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css
 */
 
 /* Large */
-giga.{
-	font-size:Xpx;
-	font-size:Xrem;
-	line-height:;
+.giga{
+    font-size:Xpx;
+    font-size:Xrem;
+    line-height:;
 }
-mega.{
-	font-size:Xpx;
-	font-size:Xrem;
-	line-height:;
+.mega{
+    font-size:Xpx;
+    font-size:Xrem;
+    line-height:;
 }
-kilo.{
-	font-size:Xpx;
-	font-size:Xrem;
-	line-height:;
+.kilo{
+    font-size:Xpx;
+    font-size:Xrem;
+    line-height:;
 }
 
 /* Headings */
 /* Generic heading class, as per: jsfiddle.net/csswizardry/yFQDP */
-.hN{
-	
+.hN{}
+hgroup .hN{
+    margin-bottom:0;
 }
 
 h1,.alpha{
-	font-size:Xpx;
-	font-size:Xrem;
-	line-height:;
+    font-size:Xpx;
+    font-size:Xrem;
+    line-height:;
 }
 h2,.beta{
-	font-size:Xpx;
-	font-size:Xrem;
-	line-height:;
+    font-size:Xpx;
+    font-size:Xrem;
+    line-height:;
 }
 h3,.gamma{
-	font-size:Xpx;
-	font-size:Xrem;
-	line-height:;
+    font-size:Xpx;
+    font-size:Xrem;
+    line-height:;
 }
 h4,.delta{
-	font-size:Xpx;
-	font-size:Xrem;
-	line-height:;
+    font-size:Xpx;
+    font-size:Xrem;
+    line-height:;
 }
 h5,.epsilon{
-	font-size:Xpx;
-	font-size:Xrem;
-	line-height:;
+    font-size:Xpx;
+    font-size:Xrem;
+    line-height:;
 }
 h6,.zeta{
-	font-size:Xpx;
-	font-size:Xrem;
-	line-height:;
+    font-size:Xpx;
+    font-size:Xrem;
+    line-height:;
 }
 
 /* Small */
 small,.milli{
-	font-size:Xpx;
-	font-size:Xrem;
-	line-height:;
+    font-size:Xpx;
+    font-size:Xrem;
+    line-height:;
 }
 
 /*--- LINKS ---*/
-a:hover{
-	text-decoration:underline;
+a{}
+    a:hover,
+    a:focus,
+    a:active{
+        text-decoration:underline;
+    }
+
+/* Basic styling for any 'current' links. */
+.current a{
+    cursor:text;
+    text-decoration:underline;
 }
 
 /*--- LISTS ---*/
 li > ul,
 li > ol{
-	margin-bottom:0;
+    margin-bottom:0;
 }
 
 /*--- QUOTES ---*/
@@ -326,16 +382,16 @@ blockquote p:after{ content: ""; content: no-close-quote; }
 blockquote p:last-of-type:after{ content: "”"; content: close-quote; }
 
 blockquote{
-	text-indent:-0.4em;
+    text-indent:-0.4em;
 }
 .source{
-	display:block;
-	text-indent:0;
-	margin-top:-Xpx;
-	margin-top:-Xrem;
+    display:block;
+    text-indent:0;
+    margin-top:-Xpx;
+    margin-top:-Xrem;
 }
 .source:before{
-	content:"—";
+    content:"—";
 }
 
 
@@ -343,11 +399,11 @@ blockquote{
 
 
 /*------------------------------------*\
-	$IMAGES
+    $IMAGES
 \*------------------------------------*/
 img{
-	max-width:100%;
-	height:auto;
+    max-width:100%;
+    height:auto;
 }
 
 
@@ -355,10 +411,10 @@ img{
 
 
 /*------------------------------------*\
-	$TABLES
+    $TABLES
 \*------------------------------------*/
 table{
-	width:100%;
+    width:100%;
 }
 
 
@@ -366,14 +422,14 @@ table{
 
 
 /*------------------------------------*\
-	$MISC
+    $MISC
 \*------------------------------------*/
-.accessibility				{ position:absolute; left:-99999px; }
-[dir=rtl] .accessibility	{ left:auto; right:-99999px; }
+.accessibility              { position:absolute; left:-99999px; }
+[dir=rtl] .accessibility    { left:auto; right:-99999px; }
 
 /*
 Helper class to carry brand colours etc as per speakerdeck.com/u/csswizardry/p/breaking-good-habits?slide=31
 */
 .brand{
-	color:;
+    color:;
 }
