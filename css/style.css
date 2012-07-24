@@ -182,7 +182,6 @@ html{
 As per: csswizardry.com/2011/09/the-nav-abstraction
 */
 .nav{
-    list-style:none;
     margin-left:0;
 }
     .nav > li,
