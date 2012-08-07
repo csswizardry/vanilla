@@ -187,7 +187,7 @@ As per: csswizardry.com/2011/09/the-nav-abstraction
     .nav > li,
         .nav > li > a{
             display:inline-block;
-            *display:inline;
+           *display:inline;
             zoom:1;
         }
 
