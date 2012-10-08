@@ -2,19 +2,19 @@
 /*------------------------------------*\
     CONTENTS
 \*------------------------------------*/
-/*
-RESET
-SHARED
-CLEARFIX
-MAIN
-NAV
-MEDIA
-ISLAND
-TYPE
-IMAGES
-TABLES
-MISC
-*/
+/**
+ * RESET
+ * SHARED
+ * CLEARFIX
+ * MAIN
+ * NAV
+ * MEDIA
+ * ISLAND
+ * TYPE
+ * IMAGES
+ * TABLES
+ * MISC
+ */
 
 
 
@@ -23,30 +23,24 @@ MISC
 /*------------------------------------*\
     $RESET
 \*------------------------------------*/
-/*
-A more considered reset; more of a restart... As per: csswizardry.com/2011/10/reset-restarted
-*/
-html,body,div,span,applet,object,iframe,
-h1,h2,h3,h4,h5,h6,p,blockquote,pre,hr,
-a,abbr,address,cite,code,
-del,dfn,em,img,ins,kbd,q,s,samp,
-small,strong,sub,sup,tt,var,
-b,u,i,
-dl,dt,dd,ol,ul,li,
-fieldset,form,label,legend,
-table,caption,tbody,tfoot,thead,tr,th,td,
-article,aside,canvas,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section,summary,
-time,mark,audio,video{
+/**
+ * A more considered reset; more of a restart... 
+ * As per: csswizardry.com/2011/10/reset-restarted
+ */
+body,
+h1,h2,h3,h4,h5,h6,
+p,blockquote,pre,
+dl,dd,ol,ul,
+form,fieldset,legend,
+table,th,td,caption,
+figure,
+hr{
     margin:0;
     padding:0;
 }
 article,aside,details,figcaption,figure,footer,
 header,hgroup,menu,nav,section{
     display:block;
-}
-h1,h2,h3,h4,h5,h6{
-    font-size:100%;
 }
 table{
     border-collapse:collapse;
@@ -73,12 +67,6 @@ a,u,ins{
 del,s{
     text-decoration:line-through;
 }
-pre,code,samp,kbd{
-    font-family:monospace;
-}
-small{
-    font-size:0.75em;
-}
 img{
     border:none;
     font-style:italic;
@@ -89,9 +77,9 @@ textarea{
     font:inherit;
 }
 
-/*
-Form items have always missed cursor interactions...
-*/
+/**
+ * Give form elements some cursor interactions...
+ */
 label,
 input,
 textarea,
@@ -100,12 +88,13 @@ select,
 option{
     cursor:pointer;
 }
-.text-input:active,
-.text-input:focus,
-textarea:active,
-textarea:focus{
-    cursor:text;
-}
+    .text-input:active,
+    .text-input:focus,
+    textarea:active,
+    textarea:focus{
+        cursor:text;
+        outline:none;
+    }
 
 
 
@@ -114,19 +103,44 @@ textarea:focus{
 /*------------------------------------*\
     $SHARED
 \*------------------------------------*/
-/* Common margin-bottom for vertical rhythm. As per csswizardry.com/2012/06/single-direction-margin-declarations */
+/**
+ * Where `margin-bottom` is concerned, this value will be the same as the
+ * base line-height. This allows us to keep a consistent vertical rhythm.
+ */
+/**
+ * Base elements
+ */
 h1,h2,h3,h4,h5,h6,hgroup,
-ul,ol,dd,
-p,figure,
-pre,table,fieldset,hr,
-.media,.island,.islet,.source{
+ul,ol,dl,
+blockquote,p,address,
+table,
+fieldset,figure,
+pre,
+hr,
+/**
+ * Objects and abstractions
+ */
+.media,
+.island,
+.islet{
     margin-bottom:Xpx;
     margin-bottom:Xrem;
 }
+    /**
+     * Doubled up `margin-bottom` helper class.
+     */
+    .landmark{
+        margin-bottom:Xpx;
+        margin-bottom:Xrem;
+    }
 
-/* Default indentation value for lists etc. */
+/**
+ * Where `margin-left` is concerned we want to try and indent certain elements
+ * by a consistent amount. Define that amount once, here.
+ */
 ul,ol,dd{
-    margin-left:Xem;
+    margin-left:Xpx;
+    margin-left:Xrem;
 }
 
 
@@ -136,9 +150,9 @@ ul,ol,dd{
 /*------------------------------------*\
     $CLEARFIX
 \*------------------------------------*/
-/*
-Big up @necolas: nicolasgallagher.com/micro-clearfix-hack
-*/
+/**
+ * Big up @necolas: nicolasgallagher.com/micro-clearfix-hack
+ */
 .media:before,
 .media:after,
 .island:before,.islet:before,
@@ -168,7 +182,7 @@ Big up @necolas: nicolasgallagher.com/micro-clearfix-hack
 \*------------------------------------*/
 html{
     overflow-y:scroll;
-    line-height:1.5; /* A safe and comfortable default for body copy at any size. */
+    line-height:1.5;
 }
 
 
@@ -178,9 +192,9 @@ html{
 /*------------------------------------*\
     $NAV
 \*------------------------------------*
-/*
-As per: csswizardry.com/2011/09/the-nav-abstraction
-*/
+/**
+ * As per: csswizardry.com/2011/09/the-nav-abstraction
+ */
 .nav{
     margin-left:0;
 }
@@ -198,9 +212,9 @@ As per: csswizardry.com/2011/09/the-nav-abstraction
 /*------------------------------------*\
     $MEDIA
 \*------------------------------------*/
-/*
-As per: stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code
-*/
+/**
+ * As per: stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code
+ */
 .media{
     display:block;
 }
@@ -224,10 +238,11 @@ As per: stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-l
             margin-bottom:0;
         }
 
-/*
-Islets have a slightly smaller padding value than normal.
-With this in mind we make the `.img` spacing a little smaller for visual consistency.
-*/
+/**
+ * Islets have a slightly smaller padding value than normal.
+ * With this in mind we make the `.img` spacing a little smaller for visual
+ * consistency.
+ */
 .islet .img{
     margin-right:Xpx;
 }
@@ -242,9 +257,9 @@ With this in mind we make the `.img` spacing a little smaller for visual consist
 /*------------------------------------*\
     $ISLAND
 \*------------------------------------*/
-/*
-As per csswizardry.com/2011/10/the-island-object
-*/
+/**
+ * As per csswizardry.com/2011/10/the-island-object
+ */
 .island,
 .islet{
     display:block;
@@ -260,7 +275,9 @@ As per csswizardry.com/2011/10/the-island-object
         margin-bottom:0;
     }
 
-/* Just like `.island`, only smaller. */
+/**
+ * Just like `.island`, only smaller.
+ */
 .islet{
     padding:Xpx;
 }
@@ -272,12 +289,13 @@ As per csswizardry.com/2011/10/the-island-object
 /*------------------------------------*\
     $TYPE
 \*------------------------------------*/
-/*--- SCALE ---*/
-/*
-As per csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css
-*/
+/**
+ * As per csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css
+ */
 
-/* Large */
+/**
+ * Large
+ */
 .giga{
     font-size:Xpx;
     font-size:Xrem;
@@ -294,8 +312,12 @@ As per csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css
     line-height:;
 }
 
-/* Headings */
-/* Generic heading class, as per: jsfiddle.net/csswizardry/yFQDP */
+/**
+ * Headings
+ */
+/**
+ * Generic heading class, as per: jsfiddle.net/csswizardry/yFQDP
+ */
 .hN{}
 hgroup .hN{
     margin-bottom:0;
@@ -332,14 +354,18 @@ h6,.zeta{
     line-height:;
 }
 
-/* Small */
+/**
+ * Small
+ */
 small,.milli{
     font-size:Xpx;
     font-size:Xrem;
     line-height:;
 }
 
-/*--- LINKS ---*/
+/**
+ * Links
+ */
 a{}
     a:hover,
     a:focus,
@@ -347,22 +373,28 @@ a{}
         text-decoration:underline;
     }
 
-/* Basic styling for any 'current' links. */
+/**
+ * Basic styling for any ‘current’ links.
+ */
 .current a{
     cursor:text;
     text-decoration:underline;
 }
 
-/*--- LISTS ---*/
+/**
+ * Lists
+ */
 li > ul,
 li > ol{
     margin-bottom:0;
 }
 
-/*--- QUOTES ---*/
-/*
-Big up @boblet: html5doctor.com/blockquote-q-cite
-*/
+/**
+ Quotes
+ */
+/**
+ * Big up @boblet: html5doctor.com/blockquote-q-cite
+ */
 q{ quotes:"‘" "’" "“" "”"; }
 
 q:before{ content:"‘"; content:open-quote; }
@@ -379,15 +411,17 @@ blockquote p:last-of-type:after{ content: "”"; content: close-quote; }
 blockquote{
     text-indent:-0.4em;
 }
+    blockquote p:last-of-type{
+        margin-bottom:0;
+    }
+
 .source{
     display:block;
     text-indent:0;
-    margin-top:-Xpx;
-    margin-top:-Xrem;
 }
-.source:before{
-    content:"—";
-}
+    .source:before{
+        content:"—";
+    }
 
 
 
@@ -422,9 +456,10 @@ table{
 .accessibility              { position:absolute; left:-99999px; }
 [dir=rtl] .accessibility    { left:auto; right:-99999px; }
 
-/*
-Helper class to carry brand colours etc as per speakerdeck.com/u/csswizardry/p/breaking-good-habits?slide=31
-*/
+/**
+ * Helper class to carry brand colours etc as per
+ * speakerdeck.com/u/csswizardry/p/breaking-good-habits?slide=31
+ */
 .brand{
     color:;
 }
